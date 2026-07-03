@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Education | Ansh Gupta — AI Engineer & Software Developer</title>
+  <meta name="description" content="Ansh Gupta's academic journey — B.Tech Computer Science (AI & ML) at Meerut Institute of Technology, affiliated to AKTU. Current CGPA, coursework, and learning goals." />
+  <meta name="keywords" content="Ansh Gupta, Education, B.Tech CSE AI ML, Meerut Institute of Technology, AKTU" />
+  <meta name="author" content="Ansh Gupta" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Education | Ansh Gupta" />
+  <meta property="og:description" content="My academic journey and continuous learning in Computer Science, AI & Machine Learning." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630/050816/6366F1?text=Ansh+Gupta" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%236366F1%22>A</text></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Shared theme stylesheet (same design system as Home) -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Education page stylesheet -->
+  <link rel="stylesheet" href="education.css" />
+</head>
+<body>
+
+  <!-- ===================== LOADING SCREEN ===================== -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__ring"></div>
+    <div class="loader__text">AG</div>
+  </div>
+
+  <!-- ===================== CUSTOM CURSOR ===================== -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" id="cursorFollower" aria-hidden="true"></div>
+
+  <!-- ===================== SCROLL PROGRESS BAR ===================== -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ===================== BACKGROUND LAYERS ===================== -->
+  <div class="bg-layer" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="bg-noise"></div>
+    <div class="blob blob--1"></div>
+    <div class="blob blob--2"></div>
+    <div class="blob blob--3"></div>
+    <canvas id="particles"></canvas>
+    <div class="mouse-glow" id="mouseGlow"></div>
+  </div>
+
+  <!-- ===================== NAVBAR (same as Home) ===================== -->
+  <header class="navbar" id="navbar">
+    <nav class="navbar__inner" aria-label="Primary navigation">
+      <a href="index.html#home" class="navbar__logo" aria-label="Ansh Gupta home">
+        <span class="logo-box">AG</span>
+      </a>
+
+      <ul class="navbar__menu" id="navbarMenu">
+        <li><a href="index.html" class="nav-link" data-nav>Home</a></li>
+        <li><a href="about.html" class="nav-link" data-nav>About</a></li>
+        <li><a href="education.html" class="nav-link active-link" data-nav>Education</a></li>
+        <li><a href="skill.html" class="nav-link" data-nav>Skills</a></li>
+        <li><a href="#" class="nav-link" data-nav>Projects</a></li>
+        <li><a href="certifications.html" class="nav-link" data-nav>Certifications</a></li>
+        <li><a href="#" class="nav-link" data-nav>Coding Profiles</a></li>
+        <li><a href="contact.html" class="nav-link" data-nav>Contact</a></li>
+      </ul>
+
+      <div class="navbar__actions">
+        <a href="#" class="btn btn--sm btn--outline" download>
+          <i class="fa-solid fa-download"></i> Resume
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileSidebar">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===================== MOBILE SIDEBAR ===================== -->
+  <aside class="mobile-sidebar" id="mobileSidebar" aria-hidden="true">
+    <ul class="mobile-sidebar__menu">
+      <li><a href="index.html" data-nav-mobile>Home</a></li>
+      <li><a href="about.html" data-nav-mobile>About</a></li>
+      <li><a href="education.html" data-nav-mobile>Education</a></li>
+      <li><a href="skill.html" data-nav-mobile>Skills</a></li>
+      <li><a href="#" data-nav-mobile>Projects</a></li>
+      <li><a href="certifications.html" data-nav-mobile>Certifications</a></li>
+      <li><a href="#" data-nav-mobile>Coding Profiles</a></li>
+      <li><a href="contact.html" data-nav-mobile>Contact</a></li>
+    </ul>
+  </aside>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <main id="main-content">
+
+    <!-- ===================== PAGE HEADER ===================== -->
+    <header class="page-header">
+      <div class="page-header__shapes" aria-hidden="true">
+        <span class="shape shape--circle"></span>
+        <span class="shape shape--square"></span>
+        <span class="shape shape--triangle"></span>
+        <span class="shape shape--ring"></span>
+      </div>
+
+      <div class="container page-header__inner">
+        <p class="hero__eyebrow reveal" data-reveal><span class="dot"></span> Currently Pursuing</p>
+        <h1 class="page-header__title reveal" data-reveal>
+          <span class="gradient-text">Education</span>
+        </h1>
+        <p class="page-header__subtitle reveal" data-reveal>
+          My Academic Journey &amp; Continuous Learning
+        </p>
+      </div>
+
+      <a href="#college" class="scroll-indicator" aria-label="Scroll to details">
+        <span></span>
+      </a>
+    </header>
+
+    <!-- ===================== EDUCATION STATS ===================== -->
+    <section class="stats" aria-label="Education quick stats">
+      <div class="container">
+        <div class="stats__grid edu-stats__grid">
+          <div class="stat-card reveal" data-reveal>
+            <span class="stat-card__icon">🏫</span>
+            <p class="stat-card__text">Meerut Institute of Technology</p>
+          </div>
+          <div class="stat-card reveal" data-reveal>
+            <span class="stat-card__icon">🎓</span>
+            <p class="stat-card__text">B.Tech CSE (AI &amp; ML)</p>
+          </div>
+          <div class="stat-card reveal" data-reveal>
+            <span class="stat-card__icon">📚</span>
+            <p class="stat-card__text">5th Semester</p>
+          </div>
+          <div class="stat-card reveal" data-reveal>
+            <span class="stat-card__icon">📈</span>
+            <p class="stat-card__text">CGPA 6.32</p>
+          </div>
+          <div class="stat-card reveal" data-reveal>
+            <span class="stat-card__icon">🎯</span>
+            <p class="stat-card__text">Graduation 2028</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== COLLEGE / TIMELINE ===================== -->
+    <section class="section" id="college">
+      <div class="container">
+        <div class="section__head reveal" data-reveal>
+          <p class="section__eyebrow">Academic Journey</p>
+          <h2 class="section__title">Where I've <span class="gradient-text">Studied</span></h2>
+        </div>
+
+        <div class="timeline edu-timeline">
+
+          <!-- Current: detailed college card -->
+          <div class="timeline__item reveal" data-reveal>
+            <div class="timeline__dot timeline__dot--active"></div>
+            <div class="timeline__card college-card">
+              <span class="status-badge"><span class="status-badge__pulse"></span> Currently Pursuing</span>
+
+              <div class="college-card__head">
+                <div class="college-logo" aria-hidden="true">
+                  <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div>
+                  <h3>Meerut Institute of Technology</h3>
+                  <p class="college-card__university">
+                    Affiliated to Dr. A.P.J. Abdul Kalam Technical University (AKTU)
+                  </p>
+                </div>
+              </div>
+
+              <div class="college-card__details">
+                <div class="college-detail">
+                  <span class="college-detail__label"><i class="fa-solid fa-user-graduate"></i> Degree</span>
+                  <span class="college-detail__value">Bachelor of Technology (B.Tech)</span>
+                </div>
+                <div class="college-detail">
+                  <span class="college-detail__label"><i class="fa-solid fa-code-branch"></i> Branch</span>
+                  <span class="college-detail__value">Computer Science &amp; Engineering — AI &amp; ML</span>
+                </div>
+                <div class="college-detail">
+                  <span class="college-detail__label"><i class="fa-solid fa-layer-group"></i> Semester</span>
+                  <span class="college-detail__value"><span class="edu-counter" data-target="5" data-decimals="0">0</span><sup>th</sup> Semester</span>
+                </div>
+                <div class="college-detail">
+                  <span class="college-detail__label"><i class="fa-solid fa-chart-simple"></i> CGPA</span>
+                  <span class="college-detail__value"><span class="edu-counter" data-target="6.32" data-decimals="2">0.00</span> / 10</span>
+                </div>
+                <div class="college-detail">
+                  <span class="college-detail__label"><i class="fa-solid fa-flag-checkered"></i> Expected Graduation</span>
+                  <span class="college-detail__value">2028</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline__item reveal" data-reveal>
+            <div class="timeline__dot"></div>
+            <div class="timeline__card">
+              <span class="timeline__year">2022 — 2024</span>
+              <h3>Senior Secondary (PCM)</h3>
+              <p>Built a strong foundation in mathematics and computer science, sparking an early interest in programming.</p>
+            </div>
+          </div>
+
+          <div class="timeline__item reveal" data-reveal>
+            <div class="timeline__dot"></div>
+            <div class="timeline__card">
+              <span class="timeline__year">2010 — 2022</span>
+              <h3>Secondary Education</h3>
+              <p>Developed core analytical and problem-solving skills across science and mathematics.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EXTRA INFORMATION CARDS ===================== -->
+    <section class="section" aria-label="Academic details">
+      <div class="container">
+        <div class="section__head reveal" data-reveal>
+          <p class="section__eyebrow">Deep Dive</p>
+          <h2 class="section__title">Focus, Coursework &amp; <span class="gradient-text">Goals</span></h2>
+        </div>
+
+        <div class="info__grid">
+          <div class="info-card reveal" data-reveal>
+            <div class="info-card__icon"><i class="fa-solid fa-bullseye"></i></div>
+            <h3>Academic Focus</h3>
+            <ul class="info-card__list">
+              <li>Artificial Intelligence</li>
+              <li>Machine Learning</li>
+              <li>Data Structures</li>
+              <li>Algorithms</li>
+              <li>Web Development</li>
+              <li>Programming</li>
+              <li>Software Engineering</li>
+            </ul>
+          </div>
+
+          <div class="info-card reveal" data-reveal>
+            <div class="info-card__icon"><i class="fa-solid fa-book-open"></i></div>
+            <h3>Relevant Subjects</h3>
+            <ul class="info-card__list">
+              <li>Python Programming</li>
+              <li>Java Programming</li>
+              <li>C Programming</li>
+              <li>Data Structures</li>
+              <li>Operating Systems</li>
+              <li>Computer Networks</li>
+              <li>Database Management Systems</li>
+              <li>Artificial Intelligence</li>
+              <li>Machine Learning</li>
+            </ul>
+          </div>
+
+          <div class="info-card reveal" data-reveal>
+            <div class="info-card__icon"><i class="fa-solid fa-rocket"></i></div>
+            <h3>Learning Goals</h3>
+            <ul class="info-card__list">
+              <li>Become an AI Engineer</li>
+              <li>Master Machine Learning</li>
+              <li>Build Intelligent Applications</li>
+              <li>Contribute to Open Source</li>
+              <li>Secure a Software Internship</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ACHIEVEMENTS ===================== -->
+    <section class="section" aria-label="Learning pillars">
+      <div class="container">
+        <div class="section__head reveal" data-reveal>
+          <p class="section__eyebrow">Growth</p>
+          <h2 class="section__title">How I <span class="gradient-text">Grow</span></h2>
+        </div>
+
+        <div class="achieve__grid">
+          <div class="achieve-card reveal" data-reveal>
+            <i class="fa-solid fa-chart-line"></i>
+            <h3>Academic Progress</h3>
+            <p>Steadily improving CGPA while balancing coursework with hands-on practice.</p>
+          </div>
+          <div class="achieve-card reveal" data-reveal>
+            <i class="fa-solid fa-infinity"></i>
+            <h3>Continuous Learning</h3>
+            <p>Constantly picking up new tools, papers, and techniques beyond the classroom.</p>
+          </div>
+          <div class="achieve-card reveal" data-reveal>
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            <h3>Skill Development</h3>
+            <p>Sharpening programming, ML, and problem-solving skills through daily practice.</p>
+          </div>
+          <div class="achieve-card reveal" data-reveal>
+            <i class="fa-solid fa-diagram-project"></i>
+            <h3>Project Based Learning</h3>
+            <p>Applying concepts to real projects to turn theory into working software.</p>
+          </div>
+          <div class="achieve-card reveal" data-reveal>
+            <i class="fa-solid fa-star"></i>
+            <h3>Future Career Goal</h3>
+            <p>Working toward a role as an AI Engineer building impactful, intelligent products.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CALL TO ACTION ===================== -->
+    <section class="section cta" aria-label="Explore more">
+      <div class="container">
+        <div class="cta__card reveal" data-reveal>
+          <h2 class="cta__title">Want to Know More About My <span class="gradient-text">Journey?</span></h2>
+          <p class="cta__desc">Take a look at what I've built, the skills I've sharpened, or just reach out.</p>
+
+          <div class="cta__buttons">
+            <a href="index.html#skills" class="btn btn--glass magnetic" data-ripple>
+              <i class="fa-solid fa-layer-group"></i> View Skills
+            </a>
+            <a href="index.html#projects" class="btn btn--glass magnetic" data-ripple>
+              <i class="fa-solid fa-diagram-project"></i> Explore Projects
+            </a>
+            <a href="#" class="btn btn--primary magnetic" data-ripple download>
+              <i class="fa-solid fa-download"></i> Download Resume
+            </a>
+            <a href="index.html#contact" class="btn btn--outline magnetic" data-ripple>
+              <i class="fa-solid fa-handshake"></i> Contact Me
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>Designed &amp; Developed by <span class="gradient-text">Ansh Gupta</span></p>
+      <p>&copy; 2026 All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ===================== BACK TO TOP ===================== -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Shared site behavior -->
+  <script src="script.js"></script>
+  <!-- Education page behavior -->
+  <script src="education.js"></script>
+</body>
+</html>

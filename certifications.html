@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certifications &amp; Experience | Ansh Gupta — AI Engineer &amp; Software Developer</title>
+  <meta name="description" content="Ansh Gupta's certifications, learning roadmap, and professional experience journey — Cloud Computing certificate, planned certifications, and internship goals." />
+  <meta name="keywords" content="Ansh Gupta, Certifications, Experience, VOIS, Cloud Computing, AWS, TensorFlow, Machine Learning, Internship" />
+  <meta name="author" content="Ansh Gupta" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Certifications & Experience | Ansh Gupta" />
+  <meta property="og:description" content="My learning journey, professional growth, and career progress toward becoming an AI Engineer." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630/050816/6366F1?text=Ansh+Gupta" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%236366F1%22>A</text></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Shared theme stylesheet (same design system as Home, Education & Skills) -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Certifications page stylesheet -->
+  <link rel="stylesheet" href="certifications.css" />
+</head>
+<body>
+
+  <!-- ===================== LOADING SCREEN ===================== -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__ring"></div>
+    <div class="loader__text">AG</div>
+  </div>
+
+  <!-- ===================== CUSTOM CURSOR ===================== -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" id="cursorFollower" aria-hidden="true"></div>
+
+  <!-- ===================== SCROLL PROGRESS BAR ===================== -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ===================== BACKGROUND LAYERS ===================== -->
+  <div class="bg-layer" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="bg-noise"></div>
+    <div class="blob blob--1"></div>
+    <div class="blob blob--2"></div>
+    <div class="blob blob--3"></div>
+    <canvas id="particles"></canvas>
+    <div class="mouse-glow" id="mouseGlow"></div>
+  </div>
+
+  <!-- ===================== NAVBAR (same as Home / Education / Skills) ===================== -->
+  <header class="navbar" id="navbar">
+    <nav class="navbar__inner" aria-label="Primary navigation">
+      <a href="index.html" class="navbar__logo" aria-label="Ansh Gupta home">
+        <span class="logo-box">AG</span>
+      </a>
+
+      <ul class="navbar__menu" id="navbarMenu">
+        <li><a href="index.html" class="nav-link" data-nav>Home</a></li>
+        <li><a href="about.html" class="nav-link" data-nav>About</a></li>
+        <li><a href="education.html" class="nav-link" data-nav>Education</a></li>
+        <li><a href="skill.html" class="nav-link" data-nav>Skills</a></li>
+        <li><a href="#" class="nav-link" data-nav>Projects</a></li>
+        <li><a href="certifications.html" class="nav-link active-link" data-nav>Certifications</a></li>
+        <li><a href="#" class="nav-link" data-nav>Coding Profiles</a></li>
+        <li><a href="contact.html" class="nav-link" data-nav>Contact</a></li>
+      </ul>
+
+      <div class="navbar__actions">
+        <a href="Resume/Ansh_Gupta_Resume.pdf" class="btn btn--sm btn--outline" download>
+          <i class="fa-solid fa-download"></i> Resume
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileSidebar">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===================== MOBILE SIDEBAR ===================== -->
+  <aside class="mobile-sidebar" id="mobileSidebar" aria-hidden="true">
+    <ul class="mobile-sidebar__menu">
+      <li><a href="index.html" data-nav-mobile>Home</a></li>
+      <li><a href="about.html" data-nav-mobile>About</a></li>
+      <li><a href="education.html" data-nav-mobile>Education</a></li>
+      <li><a href="skill.html" data-nav-mobile>Skills</a></li>
+      <li><a href="#" data-nav-mobile>Projects</a></li>
+      <li><a href="certifications.html" data-nav-mobile>Certifications</a></li>
+      <li><a href="#" data-nav-mobile>Coding Profiles</a></li>
+      <li><a href="contact.html" data-nav-mobile>Contact</a></li>
+    </ul>
+  </aside>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <main id="main-content">
+
+    <!-- ===================== PAGE HEADER ===================== -->
+    <header class="page-header">
+      <div class="page-header__shapes" aria-hidden="true">
+        <span class="shape shape--circle"></span>
+        <span class="shape shape--square"></span>
+        <span class="shape shape--triangle"></span>
+        <span class="shape shape--ring"></span>
+      </div>
+
+      <div class="container page-header__inner">
+        <p class="hero__eyebrow reveal" data-reveal><span class="dot"></span> Growing Every Day</p>
+        <h1 class="page-header__title reveal" data-reveal>
+          <span class="gradient-text">Certifications &amp; Experience</span>
+        </h1>
+        <p class="page-header__subtitle reveal" data-reveal>
+          My Learning Journey, Professional Growth &amp; Career Progress
+        </p>
+      </div>
+
+      <a href="#cert-showcase" class="scroll-indicator" aria-label="Scroll to certifications">
+        <span></span>
+      </a>
+    </header>
+
+    <!-- ===================== INTRODUCTION ===================== -->
+    <section class="section" aria-label="Introduction">
+      <div class="container">
+        <div class="intro-card reveal" data-reveal>
+          <div class="intro-card__icon"><i class="fa-solid fa-quote-left"></i></div>
+          <p>
+            I believe continuous learning is the key to becoming a successful AI Engineer. Every certification
+            represents my dedication to expanding my knowledge, while every future experience will contribute to my
+            professional journey.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CERTIFICATIONS SHOWCASE ===================== -->
+    <section class="section" id="cert-showcase">
+      <div class="container">
+        <div class="section__head reveal" data-reveal>
+          <p class="section__eyebrow">Certifications</p>
+          <h2 class="section__title">Earned <span class="gradient-text">Credentials</span></h2>
+        </div>
+
+        <div class="cert-showcase__grid">
+          <article class="cert-showcase-card reveal" data-reveal>
+            <span class="cert-ribbon"><i class="fa-solid fa-check"></i></span>
+            <div class="cert-showcase-card__shine" aria-hidden="true"></div>
+
+            <div class="cert-showcase-card__icon"><i class="fa-solid fa-cloud"></i></div>
+
+            <span class="status-badge status-badge--success">
+              <span class="status-badge__pulse"></span> Completed
+            </span>
+
+            <h3>Cloud Certificate</h3>
+            <p class="cert-showcase-card__org"><i class="fa-solid fa-building"></i> VOIS</p>
+            <p class="cert-showcase-card__category"><i class="fa-solid fa-tag"></i> Cloud Computing</p>
+
+            <p class="cert-showcase-card__desc">
+              Successfully completed a cloud computing certification program, gaining knowledge of cloud concepts,
+              services, and modern cloud technologies.
+            </p>
+
+            <a href="Certificates" class="btn btn--glass magnetic" data-ripple>
+              <i class="fa-solid fa-eye"></i> View Certificates
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FUTURE CERTIFICATION ROADMAP ===================== -->
+    <section class="section" aria-label="Certification roadmap">
+      <div class="container">
+        <div class="section__head reveal" data-reveal>
+          <p class="section__eyebrow">Roadmap</p>
+          <h2 class="section__title">Planned <span class="gradient-text">Certifications</span></h2>
+        </div>
+
+        <div class="roadmap__grid">
+          <div class="roadmap-card reveal" data-reveal>
+            <div class="roadmap-card__icon"><i class="fa-brands fa-aws"></i></div>
+            <h3>AWS Cloud Practitioner</h3>
+            <span class="progress-badge">Planned</span>
+          </div>
+          <div class="roadmap-card reveal" data-reveal>
+            <div class="roadmap-card__icon"><i class="fa-brands fa-microsoft"></i></div>
+            <h3>Microsoft Azure Fundamentals</h3>
+            <span class="progress-badge">Planned</span>
+          </div>
+          <div class="roadmap-card reveal" data-reveal>
+            <div class="roadmap-card__icon"><i class="fa-brands fa-google"></i></div>
+            <h3>Google Cloud Digital Leader</h3>
+            <span class="progress-badge">Planned</span>
+          </div>
+          <div class="roadmap-card reveal" data-reveal>
+            <div class="roadmap-card__icon"><i class="fa-solid fa-brain"></i></div>
+            <h3>TensorFlow Developer</h3>
+            <span class="progress-badge">Planned</span>
+          </div>
+          <div class="roadmap-card reveal" data-reveal>
+            <div class="roadmap-card__icon"><i class="fa-brands fa-python"></i></div>
+            <h3>Python Professional</h3>
+            <span class="progress-badge">Planned</span>
+          </div>
+          <div class="roadmap-card reveal" data-reveal>
+            <div class="roadmap-card__icon"><i class="fa-brands fa-java"></i></div>
+            <h3>Oracle Java Certification</h3>
+            <span class="progress-badge">Planned</span>
+          </div>
+          <div class="roadmap-card reveal" data-reveal>
+            <div class="roadmap-card__icon"><i class="fa-brands fa-git-alt"></i></div>
+            <h3>Git &amp; GitHub Professional</h3>
+            <span class="progress-badge">Planned</span>
+          </div>
+          <div class="roadmap-card reveal" data-reveal>
+            <div class="roadmap-card__icon"><i class="fa-solid fa-robot"></i></div>
+            <h3>Machine Learning Specialization</h3>
+            <span class="progress-badge">Planned</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROFESSIONAL EXPERIENCE ===================== -->
+    <section class="section" aria-label="Professional experience">
+      <div class="container">
+        <div class="section__head reveal" data-reveal>
+          <p class="section__eyebrow">Experience</p>
+          <h2 class="section__title">Professional <span class="gradient-text">Experience</span></h2>
+        </div>
+
+        <div class="experience-card reveal" data-reveal>
+          <div class="experience-card__icons" aria-hidden="true">
+            <span class="experience-icon experience-icon--1"><i class="fa-solid fa-laptop"></i></span>
+            <span class="experience-icon experience-icon--2"><i class="fa-solid fa-rocket"></i></span>
+            <span class="experience-icon experience-icon--3"><i class="fa-solid fa-book-open"></i></span>
+            <span class="experience-icon experience-icon--4"><i class="fa-solid fa-timeline"></i></span>
+          </div>
+
+          <span class="status-badge">
+            <span class="status-badge__pulse"></span> Currently Looking for Internship Opportunities
+          </span>
+
+          <h3 class="experience-card__title">No Professional Experience Yet</h3>
+
+          <p class="experience-card__desc">
+            I am currently focusing on improving my technical skills, building real-world projects, completing
+            certifications, and actively preparing for internship opportunities in Artificial Intelligence,
+            Machine Learning, and Software Development.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EXPERIENCE TIMELINE ===================== -->
+    <section class="section" aria-label="Experience timeline">
+      <div class="container">
+        <div class="section__head reveal" data-reveal>
+          <p class="section__eyebrow">Progress</p>
+          <h2 class="section__title">The Road So <span class="gradient-text">Far</span></h2>
+        </div>
+
+        <div class="timeline exp-timeline">
+          <div class="timeline__item reveal" data-reveal>
+            <div class="timeline__dot timeline__dot--active"></div>
+            <div class="timeline__card">
+              <span class="timeline__year">2024</span>
+              <h3>Started B.Tech Journey</h3>
+              <p>Began my Computer Science (AI &amp; ML) degree, laying the foundation for everything ahead.</p>
+            </div>
+          </div>
+          <div class="timeline__item reveal" data-reveal>
+            <div class="timeline__dot"></div>
+            <div class="timeline__card">
+              <span class="timeline__year">2025</span>
+              <h3>Learning Programming</h3>
+              <p>Built strong fundamentals in Python, Java, C and C++ through consistent practice.</p>
+            </div>
+          </div>
+          <div class="timeline__item reveal" data-reveal>
+            <div class="timeline__dot"></div>
+            <div class="timeline__card">
+              <span class="timeline__year">2026</span>
+              <h3>Web Development</h3>
+              <p>Started building modern, responsive web applications with HTML, CSS and JavaScript.</p>
+            </div>
+          </div>
+          <div class="timeline__item reveal" data-reveal>
+            <div class="timeline__dot"></div>
+            <div class="timeline__card">
+              <span class="timeline__year">2026</span>
+              <h3>Machine Learning</h3>
+              <p>Diving into machine learning concepts, models, and hands-on experiments.</p>
+            </div>
+          </div>
+          <div class="timeline__item reveal" data-reveal>
+            <div class="timeline__dot"></div>
+            <div class="timeline__card">
+              <span class="timeline__year">2026</span>
+              <h3>AI Projects</h3>
+              <p>Applying AI &amp; ML knowledge to real, hands-on projects and experiments.</p>
+            </div>
+          </div>
+          <div class="timeline__item reveal" data-reveal>
+            <div class="timeline__dot timeline__dot--goal"></div>
+            <div class="timeline__card">
+              <span class="timeline__year">2027 · Target</span>
+              <h3>Internship</h3>
+              <p>Aiming to secure an internship in AI, Machine Learning, or Software Development.</p>
+            </div>
+          </div>
+          <div class="timeline__item reveal" data-reveal>
+            <div class="timeline__dot"></div>
+            <div class="timeline__card">
+              <span class="timeline__year">2028</span>
+              <h3>Graduate &amp; Begin Professional Career</h3>
+              <p>Complete my degree and step into a full-time role as an AI Engineer.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== LEARNING HIGHLIGHTS ===================== -->
+    <section class="section" aria-label="Learning highlights">
+      <div class="container">
+        <div class="section__head reveal" data-reveal>
+          <p class="section__eyebrow">Focus Areas</p>
+          <h2 class="section__title">Learning <span class="gradient-text">Highlights</span></h2>
+        </div>
+
+        <div class="achieve__grid highlights__grid">
+          <div class="achieve-card reveal" data-reveal>
+            <i class="fa-solid fa-infinity"></i>
+            <h3>Continuous Learning</h3>
+            <p>Always exploring new tools, papers, and techniques to stay current.</p>
+          </div>
+          <div class="achieve-card reveal" data-reveal>
+            <i class="fa-solid fa-hammer"></i>
+            <h3>Hands-on Projects</h3>
+            <p>Turning theory into working software through real projects.</p>
+          </div>
+          <div class="achieve-card reveal" data-reveal>
+            <i class="fa-solid fa-cloud"></i>
+            <h3>Cloud Technologies</h3>
+            <p>Building practical understanding of cloud concepts and services.</p>
+          </div>
+          <div class="achieve-card reveal" data-reveal>
+            <i class="fa-solid fa-brain"></i>
+            <h3>Machine Learning</h3>
+            <p>Studying models, data, and algorithms that power intelligent systems.</p>
+          </div>
+          <div class="achieve-card reveal" data-reveal>
+            <i class="fa-solid fa-robot"></i>
+            <h3>Artificial Intelligence</h3>
+            <p>Exploring how AI can solve meaningful, real-world problems.</p>
+          </div>
+          <div class="achieve-card reveal" data-reveal>
+            <i class="fa-solid fa-code"></i>
+            <h3>Software Development</h3>
+            <p>Sharpening full-stack development skills through consistent practice.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ACHIEVEMENT STATS ===================== -->
+    <section class="stats" aria-label="Achievement stats">
+      <div class="container">
+        <div class="stats__grid cert-stats__grid">
+          <div class="counter-card reveal" data-reveal>
+            <span class="counter" data-target="1">0</span>
+            <p>Certificates</p>
+          </div>
+          <div class="counter-card reveal" data-reveal>
+            <span class="counter" data-target="8">0</span><span class="counter-plus">+</span>
+            <p>Upcoming Certifications</p>
+          </div>
+          <div class="counter-card counter-card--text reveal" data-reveal>
+            <span class="counter-text">Growing</span>
+            <p>Projects</p>
+          </div>
+          <div class="counter-card counter-card--text reveal" data-reveal>
+            <span class="counter-text">2027</span>
+            <p>Internship Goal</p>
+          </div>
+          <div class="counter-card counter-card--text reveal" data-reveal>
+            <span class="counter-text">AI Engineer</span>
+            <p>Career Goal</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CALL TO ACTION ===================== -->
+    <section class="section cta" aria-label="Explore more">
+      <div class="container">
+        <div class="cta__card reveal" data-reveal>
+          <h2 class="cta__title">Interested in My <span class="gradient-text">Learning Journey?</span></h2>
+          <p class="cta__desc">
+            I'm continuously learning, building projects, and preparing myself to contribute to innovative AI and
+            software development teams.
+          </p>
+
+          <div class="cta__buttons">
+            <a href="#projects" class="btn btn--glass magnetic" data-ripple>
+              <i class="fa-solid fa-diagram-project"></i> View Projects
+            </a>
+            <a href="Resume/Ansh_Gupta_Resume.pdf" class="btn btn--primary magnetic" data-ripple download>
+              <i class="fa-solid fa-download"></i> Download Resume
+            </a>
+            <a href="contact.html" class="btn btn--outline magnetic" data-ripple>
+              <i class="fa-solid fa-handshake"></i> Contact Me
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>Designed &amp; Developed by <span class="gradient-text">Ansh Gupta</span></p>
+      <p>&copy; 2026 All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ===================== BACK TO TOP ===================== -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Shared site behavior -->
+  <script src="script.js"></script>
+  <!-- Certifications page behavior -->
+  <script src="certifications.js"></script>
+</body>
+</html>

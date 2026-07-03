@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me | Ansh Gupta — B.Tech CSE (AI & ML)</title>
+  <meta name="description" content="Learn more about Ansh Gupta — B.Tech CSE (AI & ML) student at Meerut Institute of Technology, passionate about Artificial Intelligence, Machine Learning and Software Development.">
+  <meta name="keywords" content="Ansh Gupta, About Me, AI ML Student, Software Engineer, Portfolio">
+  <meta name="author" content="Ansh Gupta">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="About Me | Ansh Gupta">
+  <meta property="og:description" content="Passionate Learner • AI Enthusiast • Future Software Engineer">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="about.css">
+</head>
+<body>
+
+  <!-- ================= SCROLL PROGRESS BAR ================= -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ================= MOUSE GLOW ================= -->
+  <div class="mouse-glow" id="mouseGlow" aria-hidden="true"></div>
+
+  <!-- ================= NAVBAR ================= -->
+  <header>
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo" aria-label="Ansh Gupta Home">
+          <span class="logo-text">AG</span>
+        </a>
+
+        <ul class="nav-menu" id="navMenu">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link active">About</a></li>
+          <li class="nav-item"><a href="education.html" class="nav-link">Education</a></li>
+          <li class="nav-item"><a href="skill.html" class="nav-link">Skills</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Projects</a></li>
+          <li class="nav-item"><a href="certifications.html" class="nav-link">Certifications</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Coding Profiles</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="Resume/Ansh_Gupta_Resume.pdf" class="btn btn-primary btn-sm" target="_blank" rel="noopener">
+            <i class="fa-solid fa-download"></i> Resume
+          </a>
+        </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ================= HERO HEADER ================= -->
+    <section class="hero-header" aria-label="About Me Introduction">
+      <div class="hero-bg">
+        <div class="blur-circle circle-1"></div>
+        <div class="blur-circle circle-2"></div>
+        <div class="blur-circle circle-3"></div>
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        <div class="floating-shape shape-4"></div>
+        <canvas id="particles" aria-hidden="true"></canvas>
+      </div>
+
+      <div class="hero-content reveal">
+        <span class="hero-eyebrow"><i class="fa-solid fa-user-astronaut"></i> Get To Know Me</span>
+        <h1 class="hero-title gradient-text">About Me</h1>
+        <p class="hero-subtitle" id="typingText"></p>
+      </div>
+
+      <div class="scroll-indicator" aria-hidden="true">
+        <span></span>
+      </div>
+    </section>
+
+    <!-- ================= PROFILE SECTION ================= -->
+    <section class="profile-section">
+      <div class="container profile-grid">
+
+        <!-- Left: Photo -->
+        <div class="profile-left reveal">
+          <div class="photo-wrapper">
+            <div class="rotating-ring"></div>
+            <div class="glow-behind"></div>
+            <div class="photo-frame">
+              <img src="Image/ME.jpeg" alt="Portrait of Ansh Gupta" loading="lazy" class="profile-photo">
+            </div>
+
+            <div class="float-icon icon-1" aria-hidden="true">🤖</div>
+            <div class="float-icon icon-2" aria-hidden="true">💻</div>
+            <div class="float-icon icon-3" aria-hidden="true">🧠</div>
+            <div class="float-icon icon-4" aria-hidden="true">⚙️</div>
+            <div class="float-icon icon-5" aria-hidden="true">🚀</div>
+            <div class="float-icon icon-6" aria-hidden="true">✨</div>
+          </div>
+        </div>
+
+        <!-- Right: Intro -->
+        <div class="profile-right">
+          <p class="intro-eyebrow reveal">Hello! I'm</p>
+          <h2 class="intro-name gradient-text reveal">Ansh Gupta</h2>
+          <span class="intro-badge reveal"><i class="fa-solid fa-graduation-cap"></i> B.Tech CSE (AI &amp; ML) Student</span>
+
+          <p class="intro-para reveal">
+            Hello! I'm Ansh Gupta, a B.Tech Computer Science and Engineering (Artificial Intelligence &amp; Machine Learning) student at Meerut Institute of Technology.
+          </p>
+          <p class="intro-para reveal">
+            I enjoy solving real-world problems through technology and have a growing interest in Artificial Intelligence, Machine Learning, software development, and automation.
+          </p>
+          <p class="intro-para reveal">
+            I am continuously improving my programming skills while exploring new technologies and building practical projects.
+          </p>
+          <p class="intro-para reveal">
+            Beyond academics, I enjoy learning new technologies, creating digital content, and exploring innovative ideas that combine creativity with AI.
+          </p>
+          <p class="intro-para reveal">
+            I am currently looking for internship opportunities where I can apply my knowledge, gain industry experience, and continue growing as a software engineer.
+          </p>
+
+          <div class="intro-actions reveal">
+            <a href="contact.html" class="btn btn-primary magnetic-btn">
+              <i class="fa-solid fa-paper-plane"></i> Contact Me
+            </a>
+            <a href="Resume/Ansh_Gupta_Resume.pdf" target="_blank" rel="noopener" class="btn btn-outline magnetic-btn">
+              <i class="fa-solid fa-file-arrow-down"></i> Download Resume
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= PERSONAL INFORMATION ================= -->
+    <section class="info-section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-tag">Personal Information</span>
+          <h2>Quick <span class="gradient-text">Overview</span></h2>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-card reveal">
+            <div class="info-icon"><i class="fa-solid fa-user"></i></div>
+            <span class="info-label">Name</span>
+            <span class="info-value">Ansh Gupta</span>
+          </div>
+          <div class="info-card reveal">
+            <div class="info-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <span class="info-label">Degree</span>
+            <span class="info-value">B.Tech CSE (AI &amp; ML)</span>
+          </div>
+          <div class="info-card reveal">
+            <div class="info-icon"><i class="fa-solid fa-building-columns"></i></div>
+            <span class="info-label">College</span>
+            <span class="info-value">Meerut Institute of Technology</span>
+          </div>
+          <div class="info-card reveal">
+            <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <span class="info-label">Location</span>
+            <span class="info-value">Ara, Bihar</span>
+          </div>
+          <div class="info-card reveal">
+            <div class="info-icon"><i class="fa-solid fa-layer-group"></i></div>
+            <span class="info-label">Current Semester</span>
+            <span class="info-value">5th Semester</span>
+          </div>
+          <div class="info-card reveal">
+            <div class="info-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <span class="info-label">Current CGPA</span>
+            <span class="info-value">6.32</span>
+          </div>
+          <div class="info-card reveal">
+            <div class="info-icon"><i class="fa-solid fa-calendar-check"></i></div>
+            <span class="info-label">Graduation</span>
+            <span class="info-value">2028</span>
+          </div>
+          <div class="info-card reveal">
+            <div class="info-icon"><i class="fa-solid fa-circle-check"></i></div>
+            <span class="info-label">Status</span>
+            <span class="info-value">Open to Internship</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MY JOURNEY ================= -->
+    <section class="journey-section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-tag">My Journey</span>
+          <h2>The Road <span class="gradient-text">So Far</span></h2>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-line" aria-hidden="true"><span class="timeline-progress" id="timelineProgress"></span></div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"><i class="fa-solid fa-flag-checkered"></i></div>
+            <div class="timeline-card">
+              <h3>Started Programming</h3>
+              <p>Wrote my first lines of code and discovered a passion for building things.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"><i class="fa-solid fa-code"></i></div>
+            <div class="timeline-card">
+              <h3>Learning Web Development</h3>
+              <p>Explored HTML, CSS and JavaScript to bring ideas to life on the web.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"><i class="fa-solid fa-brain"></i></div>
+            <div class="timeline-card">
+              <h3>Exploring Artificial Intelligence</h3>
+              <p>Got curious about how machines learn and started studying AI fundamentals.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"><i class="fa-solid fa-robot"></i></div>
+            <div class="timeline-card">
+              <h3>Building Machine Learning Projects</h3>
+              <p>Applied ML concepts to hands-on projects and real datasets.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"><i class="fa-solid fa-cloud"></i></div>
+            <div class="timeline-card">
+              <h3>Learning Cloud Technologies</h3>
+              <p>Started exploring cloud platforms to deploy and scale applications.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"><i class="fa-solid fa-briefcase"></i></div>
+            <div class="timeline-card">
+              <h3>Preparing for Internship</h3>
+              <p>Sharpening my skills and portfolio to take on real industry challenges.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"><i class="fa-solid fa-rocket"></i></div>
+            <div class="timeline-card">
+              <h3>Future AI Engineer</h3>
+              <p>Working towards becoming a skilled AI &amp; Software Engineer.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WHAT DRIVES ME ================= -->
+    <section class="drives-section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-tag">What Drives Me</span>
+          <h2>My Core <span class="gradient-text">Motivations</span></h2>
+        </div>
+
+        <div class="drives-grid">
+          <div class="drive-card reveal">
+            <div class="drive-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
+            <h3>Problem Solving</h3>
+            <p>I enjoy solving real-world challenges using technology.</p>
+          </div>
+          <div class="drive-card reveal">
+            <div class="drive-icon"><i class="fa-solid fa-microchip"></i></div>
+            <h3>Artificial Intelligence</h3>
+            <p>Learning intelligent systems and automation.</p>
+          </div>
+          <div class="drive-card reveal">
+            <div class="drive-icon"><i class="fa-solid fa-book-open-reader"></i></div>
+            <h3>Continuous Learning</h3>
+            <p>Always exploring new technologies and improving my skills.</p>
+          </div>
+          <div class="drive-card reveal">
+            <div class="drive-icon"><i class="fa-solid fa-lightbulb"></i></div>
+            <h3>Innovation</h3>
+            <p>Combining creativity with software development.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CAREER OBJECTIVE ================= -->
+    <section class="objective-section">
+      <div class="container">
+        <div class="objective-card reveal">
+          <span class="section-tag center">Career Objective</span>
+          <h2>Career <span class="gradient-text">Objective</span></h2>
+          <p class="objective-text">
+            I am a passionate B.Tech <span class="highlight-text">AIML</span> student seeking
+            <span class="highlight-text">Internship</span> opportunities where I can apply my
+            <span class="highlight-text">AI</span>,
+            <span class="highlight-text">Machine Learning</span>, and
+            <span class="highlight-text">Software Development</span>
+            skills to solve real-world problems while continuously learning and growing.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PERSONAL INTERESTS ================= -->
+    <section class="interests-section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-tag">Personal Interests</span>
+          <h2>Things I <span class="gradient-text">Love</span></h2>
+        </div>
+
+        <div class="interests-grid">
+          <div class="interest-card reveal"><i class="fa-solid fa-brain"></i><span>Artificial Intelligence</span></div>
+          <div class="interest-card reveal"><i class="fa-solid fa-diagram-project"></i><span>Machine Learning</span></div>
+          <div class="interest-card reveal"><i class="fa-solid fa-code"></i><span>Programming</span></div>
+          <div class="interest-card reveal"><i class="fa-solid fa-laptop-code"></i><span>Software Development</span></div>
+          <div class="interest-card reveal"><i class="fa-solid fa-gears"></i><span>Automation</span></div>
+          <div class="interest-card reveal"><i class="fa-solid fa-video"></i><span>Digital Content Creation</span></div>
+          <div class="interest-card reveal"><i class="fa-solid fa-microchip"></i><span>Technology</span></div>
+          <div class="interest-card reveal"><i class="fa-solid fa-lightbulb"></i><span>Innovation</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= QUICK FACTS ================= -->
+    <section class="facts-section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-tag">Quick Facts</span>
+          <h2>By The <span class="gradient-text">Numbers</span></h2>
+        </div>
+
+        <div class="facts-grid">
+          <div class="fact-card reveal">
+            <span class="fact-number" data-count="4" data-suffix="+">0</span>
+            <span class="fact-label">Programming Languages</span>
+          </div>
+          <div class="fact-card reveal">
+            <span class="fact-number" data-count="10" data-suffix="+">0</span>
+            <span class="fact-label">Technologies Learning</span>
+          </div>
+          <div class="fact-card reveal">
+            <span class="fact-number" data-count="5" data-suffix="th">0</span>
+            <span class="fact-label">Current Semester</span>
+          </div>
+          <div class="fact-card reveal">
+            <span class="fact-number" data-count="2028" data-suffix="">0</span>
+            <span class="fact-label">Graduation</span>
+          </div>
+          <div class="fact-card reveal fact-text-card">
+            <span class="fact-number fact-text">AI Engineer</span>
+            <span class="fact-label">Career Goal</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CALL TO ACTION ================= -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-card reveal">
+          <div class="cta-glow" aria-hidden="true"></div>
+          <h2>Let's Build Something <span class="gradient-text">Amazing Together</span></h2>
+          <p>I'm always excited to collaborate, learn, and contribute to meaningful software and AI projects.</p>
+
+          <div class="cta-buttons">
+            <a href="#" class="btn btn-primary magnetic-btn">
+              <i class="fa-solid fa-diagram-project"></i> View Projects
+            </a>
+            <a href="Resume/Ansh_Gupta_Resume.pdf" target="_blank" rel="noopener" class="btn btn-outline magnetic-btn">
+              <i class="fa-solid fa-file-arrow-down"></i> Download Resume
+            </a>
+            <a href="contact.html" class="btn btn-glow magnetic-btn">
+              <i class="fa-solid fa-handshake"></i> Hire Me
+            </a>
+            <a href="contact.html" class="btn btn-outline magnetic-btn">
+              <i class="fa-solid fa-envelope"></i> Contact Me
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="logo-text">AG</span>
+        <p>Building thoughtful software, one project at a time.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="education.html">Education</a>
+        <a href="skill.html">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="#coding-profiles">Coding Profiles</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer-social">
+        <h4>Connect</h4>
+        <div class="social-icons">
+          <a href="https://github.com/mikey-216" aria-label="GitHub" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/anshgupta21/" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i></a>
+          <!-- <a href="https://twitter.com/ansh_gupta" aria-label="Twitter" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter"></i></a> -->
+          <!-- <a href="https://www.instagram.com/ansh.gupta" aria-label="Instagram" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Designed &amp; Developed by <span class="gradient-text">Ansh Gupta</span></p>
+      <p>&copy; 2026 All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ================= BACK TO TOP ================= -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="about.js"></script>
+</body>
+</html>

@@ -1,0 +1,436 @@
+/* =========================================================
+   EDUCATION PAGE STYLES
+   Extends the shared theme in style.css (same variables,
+   colors, typography, buttons, cards, reveal animations).
+   Table of Contents:
+   1. Page Header
+   2. Floating Geometric Shapes
+   3. Education Stats tweak
+   4. College Timeline Card
+   5. Status Badge
+   6. Info Cards (Focus / Subjects / Goals)
+   7. Achievement Cards
+   8. Call To Action
+   9. Responsive
+   ========================================================= */
+
+/* ================= 1. PAGE HEADER ================= */
+.page-header {
+  position: relative;
+  min-height: 62vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: calc(var(--nav-height) + 40px) 24px 60px;
+  overflow: hidden;
+}
+
+.page-header__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  z-index: 2;
+}
+
+.page-header__title {
+  font-size: clamp(46px, 8vw, 84px);
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+.page-header__subtitle {
+  font-size: clamp(15px, 2vw, 18px);
+  font-weight: 500;
+  color: var(--white);
+  opacity: 0.85;
+  max-width: 520px;
+}
+
+/* ================= 2. FLOATING GEOMETRIC SHAPES ================= */
+.page-header__shapes {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.shape {
+  position: absolute;
+  opacity: 0.5;
+  animation: shapeFloat 9s ease-in-out infinite;
+}
+
+.shape--circle {
+  top: 18%;
+  left: 12%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid rgba(99, 102, 241, 0.5);
+  animation-delay: 0s;
+}
+
+.shape--square {
+  bottom: 22%;
+  right: 14%;
+  width: 46px;
+  height: 46px;
+  border: 2px solid rgba(6, 182, 212, 0.5);
+  border-radius: 10px;
+  transform: rotate(20deg);
+  animation-delay: 1.5s;
+}
+
+.shape--triangle {
+  top: 30%;
+  right: 20%;
+  width: 0;
+  height: 0;
+  border-left: 26px solid transparent;
+  border-right: 26px solid transparent;
+  border-bottom: 44px solid rgba(139, 92, 246, 0.35);
+  animation-delay: 3s;
+}
+
+.shape--ring {
+  bottom: 14%;
+  left: 18%;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  animation-delay: 4.5s;
+}
+
+@keyframes shapeFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-24px) rotate(12deg); }
+}
+
+/* ================= 3. EDUCATION STATS TWEAK ================= */
+.edu-stats__grid {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+/* ================= 4. COLLEGE TIMELINE CARD ================= */
+.timeline__dot--active {
+  background: var(--gradient-main);
+  box-shadow: 0 0 0 6px rgba(99, 102, 241, 0.2), 0 0 18px rgba(6, 182, 212, 0.6);
+}
+
+.college-card {
+  position: relative;
+  padding-top: 54px;
+}
+
+.college-card__head {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.college-logo {
+  flex-shrink: 0;
+  width: 58px;
+  height: 58px;
+  border-radius: var(--radius-md);
+  display: grid;
+  place-items: center;
+  background: var(--gradient-main);
+  color: var(--white);
+  font-size: 24px;
+  box-shadow: var(--shadow-glow);
+}
+
+.college-card__head h3 {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.college-card__university {
+  font-size: 13.5px;
+  color: var(--text-gray);
+}
+
+.college-card__details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.college-detail {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.college-detail:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.college-detail__label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.college-detail__value {
+  display: block;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--white);
+}
+
+/* ================= 5. STATUS BADGE ================= */
+.status-badge {
+  position: absolute;
+  top: 24px;
+  right: 26px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  padding: 7px 14px;
+  border-radius: var(--radius-full);
+}
+
+.status-badge__pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+/* ================= 6. INFO CARDS ================= */
+.info__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.info-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 30px 28px;
+  backdrop-filter: blur(12px);
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.info-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary);
+  box-shadow: var(--shadow-soft);
+}
+
+.info-card__icon {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-sm);
+  display: grid;
+  place-items: center;
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  color: var(--secondary);
+  font-size: 20px;
+  margin-bottom: 18px;
+}
+
+.info-card h3 {
+  font-size: 17px;
+  margin-bottom: 16px;
+}
+
+.info-card__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-card__list li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 13.5px;
+  color: var(--text-gray);
+}
+
+.info-card__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--gradient-main);
+}
+
+/* ================= 7. ACHIEVEMENT CARDS ================= */
+.achieve__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.achieve-card {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 28px 20px;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  overflow: hidden;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.achieve-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--gradient-main);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.achieve-card:hover {
+  transform: translateY(-8px);
+}
+
+.achieve-card:hover::before {
+  opacity: 1;
+}
+
+.achieve-card i {
+  font-size: 28px;
+  margin-bottom: 14px;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.achieve-card h3 {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.achieve-card p {
+  font-size: 12.5px;
+}
+
+/* ================= 8. CALL TO ACTION ================= */
+.cta__card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 64px 40px;
+  text-align: center;
+  backdrop-filter: blur(16px);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta__card::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.18), transparent 65%);
+  filter: blur(40px);
+  z-index: -1;
+}
+
+.cta__title {
+  font-size: clamp(26px, 3.6vw, 38px);
+  margin-bottom: 14px;
+}
+
+.cta__desc {
+  font-size: 15px;
+  max-width: 480px;
+  margin: 0 auto 34px;
+}
+
+.cta__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* ================= 9. RESPONSIVE ================= */
+@media (max-width: 1100px) {
+  .edu-stats__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .info__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .achieve__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .college-card__details {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .page-header {
+    min-height: 52vh;
+  }
+  .edu-stats__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .info__grid {
+    grid-template-columns: 1fr;
+  }
+  .achieve__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .status-badge {
+    position: static;
+    display: inline-flex;
+    margin-bottom: 18px;
+  }
+  .college-card {
+    padding-top: 30px;
+  }
+  .college-card__head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .cta__card {
+    padding: 44px 24px;
+  }
+}
+
+@media (max-width: 420px) {
+  .achieve__grid {
+    grid-template-columns: 1fr;
+  }
+}

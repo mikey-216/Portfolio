@@ -1,0 +1,438 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ansh Gupta | AI Engineer & Software Developer</title>
+  <meta name="description" content="Ansh Gupta — B.Tech CSE (AI & ML) student, aspiring AI Engineer, Machine Learning enthusiast and Software Developer. Explore projects, skills, and certifications." />
+  <meta name="keywords" content="Ansh Gupta, AI Engineer, Machine Learning, Software Developer, Portfolio, B.Tech CSE AI ML" />
+  <meta name="author" content="Ansh Gupta" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ansh Gupta | AI Engineer & Software Developer" />
+  <meta property="og:description" content="I build intelligent applications, explore machine learning technologies, and develop modern web applications." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630/050816/6366F1?text=Ansh+Gupta" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%236366F1%22>A</text></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== LOADING SCREEN ===================== -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__ring"></div>
+    <div class="loader__text">AG</div>
+  </div>
+
+  <!-- ===================== CUSTOM CURSOR ===================== -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" id="cursorFollower" aria-hidden="true"></div>
+
+  <!-- ===================== SCROLL PROGRESS BAR ===================== -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ===================== BACKGROUND LAYERS ===================== -->
+  <div class="bg-layer" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="bg-noise"></div>
+    <div class="blob blob--1"></div>
+    <div class="blob blob--2"></div>
+    <div class="blob blob--3"></div>
+    <canvas id="particles"></canvas>
+    <div class="mouse-glow" id="mouseGlow"></div>
+  </div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="navbar" id="navbar">
+    <nav class="navbar__inner" aria-label="Primary navigation">
+      <a href="#home" class="navbar__logo" aria-label="Ansh Gupta home">
+        <span class="logo-box">AG</span>
+      </a>
+
+      <ul class="navbar__menu" id="navbarMenu">
+        <li><a href="index.html" class="nav-link active-link" data-nav>Home</a></li>
+        <li><a href="about.html" class="nav-link" data-nav>About</a></li>
+        <li><a href="education.html" class="nav-link" data-nav>Education</a></li>
+        <li><a href="skill.html" class="nav-link" data-nav>Skills</a></li>
+        <li><a href="#" class="nav-link" data-nav>Projects</a></li>
+        <li><a href="certifications.html" class="nav-link" data-nav>Certifications</a></li>
+        <li><a href="#" class="nav-link" data-nav>Coding Profiles</a></li>
+        <li><a href="contact.html" class="nav-link" data-nav>Contact</a></li>
+      </ul>
+
+      <div class="navbar__actions">
+        <a href="Resume/Ansh_Gupta_Resume.pdf" class="btn btn--sm btn--outline" download>
+          <i class="fa-solid fa-download"></i> Resume
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileSidebar">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===================== MOBILE SIDEBAR ===================== -->
+  <aside class="mobile-sidebar" id="mobileSidebar" aria-hidden="true">
+    <ul class="mobile-sidebar__menu">
+      <li><a href="index.html" data-nav-mobile>Home</a></li>
+      <li><a href="about.html" data-nav-mobile>About</a></li>
+      <li><a href="education.html" data-nav-mobile>Education</a></li>
+      <li><a href="skills.html" data-nav-mobile>Skills</a></li>
+      <li><a href="#" data-nav-mobile>Projects</a></li>
+      <li><a href="certifications.html" data-nav-mobile>Certifications</a></li>
+      <li><a href="#" data-nav-mobile>Coding Profiles</a></li>
+      <li><a href="contact.html" data-nav-mobile>Contact</a></li>
+    </ul>
+  </aside>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <main id="main-content">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="home">
+      <div class="hero__inner">
+
+        <div class="hero__left reveal" data-reveal>
+          <p class="hero__eyebrow"><span class="dot"></span> Available for Internships</p>
+
+          <h1 class="hero__title">
+            Hi, I'm <br />
+            <span class="gradient-text" id="heroName">Ansh Gupta</span>
+          </h1>
+
+          <div class="hero__typing">
+            <span>I'm a </span><span class="typing-text" id="typingText"></span><span class="typing-cursor">|</span>
+          </div>
+
+          <p class="hero__subtitle">
+            B.Tech CSE (AI &amp; ML) Student — Aspiring AI Engineer | Machine Learning Enthusiast | Software Developer
+          </p>
+
+          <p class="hero__desc">
+            I build intelligent applications, explore machine learning technologies, and develop modern web
+            applications while continuously learning new technologies.
+          </p>
+
+          <div class="hero__buttons">
+            <a href="Resume/Ansh_Gupta_Resume.pdf" class="btn btn--primary magnetic" data-ripple download>
+              <i class="fa-solid fa-download"></i> Download Resume
+            </a>
+            <a href="#projects" class="btn btn--glass magnetic" data-ripple>
+              <i class="fa-solid fa-diagram-project"></i> View Projects
+            </a>
+            <a href="contact.html" class="btn btn--outline magnetic" data-ripple>
+              <i class="fa-solid fa-handshake"></i> Hire Me
+            </a>
+          </div>
+
+          <div class="hero__social">
+            <a href="https://github.com/mikey-216" target="_blank" rel="noopener" class="social-icon" data-tooltip="GitHub" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/anshgupta21" target="_blank" rel="noopener" class="social-icon" data-tooltip="LinkedIn" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:mikey21ag@gmail.com" class="social-icon" data-tooltip="Email" aria-label="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="tel:9234863620" class="social-icon" data-tooltip="Phone" aria-label="Phone">
+              <i class="fa-solid fa-phone"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero__right reveal" data-reveal>
+          <div class="profile-wrap">
+            <div class="profile-glow"></div>
+            <div class="profile-ring"></div>
+            <div class="profile-ring profile-ring--reverse"></div>
+
+            <div class="floating-icon icon-1">🤖</div>
+            <div class="floating-icon icon-2">🧠</div>
+            <div class="floating-icon icon-3">⚙️</div>
+            <div class="floating-icon icon-4">💻</div>
+            <div class="floating-icon icon-5">☁️</div>
+            <div class="floating-icon icon-6">📊</div>
+            <div class="floating-icon icon-7">🚀</div>
+            <div class="floating-icon icon-8">✨</div>
+
+            <div class="profile-photo">
+              <img
+    
+                src="Image/ME.jpeg"
+                alt="Portrait of Ansh Gupta"
+                loading="lazy"
+                width="360"
+                height="360"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="about.html" class="scroll-indicator" aria-label="Scroll to About section">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ===================== QUICK STATS ===================== -->
+    <section class="stats" aria-label="Quick stats">
+      <div class="container">
+        <div class="stats__grid">
+          <div class="stat-card reveal" data-reveal>
+            <span class="stat-card__icon">🎓</span>
+            <p class="stat-card__text">B.Tech CSE (AI &amp; ML)</p>
+          </div>
+          <div class="stat-card reveal" data-reveal>
+            <span class="stat-card__icon">📍</span>
+            <p class="stat-card__text">Ara, Bihar</p>
+          </div>
+          <div class="stat-card reveal" data-reveal>
+            <span class="stat-card__icon">🎯</span>
+            <p class="stat-card__text">Graduation 2028</p>
+          </div>
+          <div class="stat-card reveal" data-reveal>
+            <span class="stat-card__icon">💻</span>
+            <p class="stat-card__text">AI &amp; ML Enthusiast</p>
+          </div>
+          <div class="stat-card reveal" data-reveal>
+            <span class="stat-card__icon">🚀</span>
+            <p class="stat-card__text">Open to Internship</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section__head reveal" data-reveal>
+          <p class="section__eyebrow">About Me</p>
+          <h2 class="section__title">Turning curiosity into <span class="gradient-text">code</span></h2>
+        </div>
+
+        <div class="about__grid">
+          <div class="about__text reveal" data-reveal>
+            <p>
+              I'm Ansh Gupta, a B.Tech Computer Science (AI &amp; ML) student based in Ara, Bihar, driven by a deep
+              curiosity for how intelligent systems learn, adapt, and solve real problems.
+            </p>
+            <p>
+              My work spans machine learning experiments, full-stack web development, and continuous exploration of
+              emerging technologies. I enjoy translating complex ideas into clean, usable products.
+            </p>
+            <p>
+              When I'm not building, I'm learning — reading papers, practicing algorithms, and sharpening my craft
+              one project at a time.
+            </p>
+          </div>
+
+          <div class="about__counters reveal" data-reveal>
+            <div class="counter-card">
+              <span class="counter" data-target="1">0</span><span class="counter-plus">+</span>
+              <p>Projects Built</p>
+            </div>
+            <div class="counter-card">
+              <span class="counter" data-target="6">0</span><span class="counter-plus">+</span>
+              <p>Certifications</p>
+            </div>
+            <div class="counter-card">
+              <span class="counter" data-target="3">0</span><span class="counter-plus">+</span>
+              <p>Years Learning</p>
+            </div>
+            <div class="counter-card">
+              <span class="counter" data-target="100">0</span><span class="counter-plus">%</span>
+              <p>Dedication</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ===================== SKILLS ===================== -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section__head reveal" data-reveal>
+          <p class="section__eyebrow">Skills</p>
+          <h2 class="section__title">Tools &amp; <span class="gradient-text">Technologies</span></h2>
+        </div>
+
+        <div class="skills__grid">
+          <div class="skill-card reveal" data-reveal>
+            <i class="fa-brands fa-python"></i>
+            <h3>Python</h3>
+            <div class="skill-bar"><span style="--level:90%"></span></div>
+          </div>
+          <div class="skill-card reveal" data-reveal>
+            <i class="fa-solid fa-brain"></i>
+            <h3>Machine Learning</h3>
+            <div class="skill-bar"><span style="--level:80%"></span></div>
+          </div>
+          <div class="skill-card reveal" data-reveal>
+            <i class="fa-brands fa-html5"></i>
+            <h3>HTML5</h3>
+            <div class="skill-bar"><span style="--level:95%"></span></div>
+          </div>
+          <div class="skill-card reveal" data-reveal>
+            <i class="fa-brands fa-css3-alt"></i>
+            <h3>CSS3</h3>
+            <div class="skill-bar"><span style="--level:90%"></span></div>
+          </div>
+          <div class="skill-card reveal" data-reveal>
+            <i class="fa-brands fa-js"></i>
+            <h3>JavaScript</h3>
+            <div class="skill-bar"><span style="--level:85%"></span></div>
+          </div>
+          <div class="skill-card reveal" data-reveal>
+            <i class="fa-solid fa-database"></i>
+            <h3>SQL</h3>
+            <div class="skill-bar"><span style="--level:80%"></span></div>
+          </div>
+          <div class="skill-card reveal" data-reveal>
+            <i class="fa-brands fa-git-alt"></i>
+            <h3>Git &amp; GitHub</h3>
+            <div class="skill-bar"><span style="--level:85%"></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <!-- ===================== CERTIFICATIONS ===================== -->
+    <section class="section" id="certifications">
+      <div class="container">
+        <div class="section__head reveal" data-reveal>
+          <p class="section__eyebrow">Certifications</p>
+          <h2 class="section__title">Credentials &amp; <span class="gradient-text">Achievements</span></h2>
+        </div>
+
+        <div class="certs__grid">
+          <div class="cert-card reveal" data-reveal>
+            <i class="fa-solid fa-certificate"></i>
+            <h3>VOIS</h3>
+            <p>DeepLearning.AI &amp; Stanford Online</p>
+          </div>
+          <div class="cert-card reveal" data-reveal>
+            <i class="fa-solid fa-certificate"></i>
+            <h3>Cloud </h3>
+            <p>IBM</p>
+          </div>
+          <div class="cert-card reveal" data-reveal>
+            <i class="fa-solid fa-certificate"></i>
+            <h3>Git &amp; GitHub Essentials</h3>
+            <p>GitHub</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CODING PROFILES ===================== -->
+    <section class="section" id="coding-profiles">
+      <div class="container">
+        <div class="section__head reveal" data-reveal>
+          <p class="section__eyebrow">Coding Profiles</p>
+          <h2 class="section__title">Where I <span class="gradient-text">Practice</span></h2>
+        </div>
+
+        <div class="profiles__grid">
+          <a href="https://github.com/mikey-216" target="_blank" rel="noopener" class="profile-card reveal" data-reveal>
+            <i class="fa-brands fa-github"></i>
+            <h3>GitHub</h3>
+            <p>mikey-216</p>
+          </a>
+          <a href="#" target="_blank" rel="noopener" class="profile-card reveal" data-reveal>
+            <i class="fa-brands fa-square-github"></i>
+            <h3>LeetCode</h3>
+            <p>Problem solving practice</p>
+          </a>
+           
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section__head reveal" data-reveal>
+          <p class="section__eyebrow">Contact</p>
+          <h2 class="section__title">Let's Build Something <span class="gradient-text">Great</span></h2>
+        </div>
+
+        <div class="contact__grid">
+          <div class="contact__info reveal" data-reveal>
+            <p class="contact__desc">
+              I'm currently open to internship opportunities and collaborations. Reach out and let's talk.
+            </p>
+
+            <a href="mailto:mikey21ag@gmail.com" class="contact__row">
+              <span class="contact__icon"><i class="fa-solid fa-envelope"></i></span>
+              <span>mikey21ag@gmail.com</span>
+            </a>
+            <!-- <a href="tel:9234863620" class="contact__row">
+              <span class="contact__icon"><i class="fa-solid fa-phone"></i></span>
+              <span>+91 92348 63620</span>
+            </a> -->
+            <div class="contact__row">
+              <span class="contact__icon"><i class="fa-solid fa-location-dot"></i></span>
+              <span>Ara, Bihar, India</span>
+            </div>
+
+            <div class="hero__social">
+              <a href="https://github.com/mikey-216" target="_blank" rel="noopener" class="social-icon" data-tooltip="GitHub" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/anshgupta21" target="_blank" rel="noopener" class="social-icon" data-tooltip="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="mailto:mikey21ag@gmail.com" class="social-icon" data-tooltip="Email" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+              <a href="tel:9234863620" class="social-icon" data-tooltip="Phone" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
+            </div>
+          </div>
+
+          <form class="contact__form reveal" data-reveal onsubmit="return false;">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary magnetic" data-ripple style="width:100%;">
+              <i class="fa-solid fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>Designed &amp; Developed by <span class="gradient-text">Ansh Gupta</span></p>
+      <p>&copy; 2026 All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ===================== BACK TO TOP ===================== -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>

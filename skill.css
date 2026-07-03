@@ -1,0 +1,506 @@
+/* =========================================================
+   SKILLS PAGE STYLES
+   Extends the shared theme in style.css (same variables,
+   colors, typography, buttons, cards, reveal animations).
+   Table of Contents:
+   1. Page Header (shared pattern with Education page)
+   2. Floating Geometric Shapes
+   3. Introduction Card
+   4. Skill Category Cards
+   5. Skill Rows / Progress Bars
+   6. Tool Chips
+   7. Technology Stack Grid
+   8. Learning Path Timeline
+   9. Skill Summary tweak
+   10. Call To Action
+   11. Responsive
+   ========================================================= */
+
+/* ================= 1. PAGE HEADER ================= */
+.page-header {
+  position: relative;
+  min-height: 62vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: calc(var(--nav-height) + 40px) 24px 60px;
+  overflow: hidden;
+}
+
+.page-header__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  z-index: 2;
+}
+
+.page-header__title {
+  font-size: clamp(42px, 7vw, 76px);
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+.page-header__subtitle {
+  font-size: clamp(15px, 2vw, 18px);
+  font-weight: 500;
+  color: var(--white);
+  opacity: 0.85;
+  max-width: 560px;
+}
+
+/* ================= 2. FLOATING GEOMETRIC SHAPES ================= */
+.page-header__shapes {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.shape {
+  position: absolute;
+  opacity: 0.5;
+  animation: shapeFloat 9s ease-in-out infinite;
+}
+
+.shape--circle {
+  top: 18%;
+  left: 12%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid rgba(99, 102, 241, 0.5);
+  animation-delay: 0s;
+}
+
+.shape--square {
+  bottom: 22%;
+  right: 14%;
+  width: 46px;
+  height: 46px;
+  border: 2px solid rgba(6, 182, 212, 0.5);
+  border-radius: 10px;
+  transform: rotate(20deg);
+  animation-delay: 1.5s;
+}
+
+.shape--triangle {
+  top: 30%;
+  right: 20%;
+  width: 0;
+  height: 0;
+  border-left: 26px solid transparent;
+  border-right: 26px solid transparent;
+  border-bottom: 44px solid rgba(139, 92, 246, 0.35);
+  animation-delay: 3s;
+}
+
+.shape--ring {
+  bottom: 14%;
+  left: 18%;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  animation-delay: 4.5s;
+}
+
+@keyframes shapeFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-24px) rotate(12deg); }
+}
+
+/* ================= 3. INTRODUCTION CARD ================= */
+.intro-card {
+  max-width: 820px;
+  margin: 0 auto;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 44px 48px;
+  text-align: center;
+  backdrop-filter: blur(14px);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.intro-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--primary);
+}
+
+.intro-card__icon {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--gradient-main);
+  color: var(--white);
+  font-size: 18px;
+  box-shadow: var(--shadow-glow);
+}
+
+.intro-card p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-gray);
+}
+
+/* ================= 4. SKILL CATEGORY CARDS ================= */
+.category__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 26px;
+}
+
+.category-card--wide {
+  grid-column: span 2;
+}
+
+.category-card {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px 30px;
+  backdrop-filter: blur(12px);
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-soft);
+}
+
+.category-card__head {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 26px;
+}
+
+.category-card__icon {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-sm);
+  display: grid;
+  place-items: center;
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  color: var(--accent);
+  font-size: 21px;
+}
+
+.category-card__head h3 {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.category-card__head p {
+  font-size: 13px;
+  color: var(--text-gray);
+}
+
+/* ================= 5. SKILL ROWS / PROGRESS BARS ================= */
+.skill-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.skill-row__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.skill-row__pct {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* ================= 6. TOOL CHIPS ================= */
+.tool-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.tool-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  color: var(--white);
+  font-size: 13.5px;
+  font-weight: 500;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.tool-chip i {
+  color: var(--accent);
+  font-size: 16px;
+}
+
+.tool-chip:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+  background: rgba(99, 102, 241, 0.1);
+}
+
+/* ================= 7. TECHNOLOGY STACK GRID ================= */
+.stack__grid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 18px;
+}
+
+.stack-icon {
+  position: relative;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 26px;
+  color: var(--white);
+  backdrop-filter: blur(10px);
+  animation: floatIconSlow 5s ease-in-out infinite;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast), color var(--transition-fast);
+}
+
+.stack-icon:nth-child(3n) { animation-delay: 0.6s; }
+.stack-icon:nth-child(4n) { animation-delay: 1.2s; }
+.stack-icon:nth-child(5n) { animation-delay: 1.8s; }
+
+@keyframes floatIconSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.stack-icon:hover {
+  transform: translateY(-10px) scale(1.12) rotate(6deg);
+  border-color: transparent;
+  color: var(--white);
+  box-shadow: var(--shadow-glow);
+  background: var(--gradient-main);
+  animation-play-state: paused;
+}
+
+.stack-icon[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -34px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  background: #0c1024;
+  border: 1px solid var(--border);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+  z-index: 5;
+}
+
+.stack-icon[data-tooltip]:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ================= 8. LEARNING PATH TIMELINE ================= */
+.path {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  position: relative;
+  padding: 20px 0;
+}
+
+.path::before {
+  content: "";
+  position: absolute;
+  top: 46px;
+  left: 6%;
+  right: 6%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+  opacity: 0.35;
+  z-index: 0;
+}
+
+.path__step {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+}
+
+.path__dot {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--accent);
+  font-size: 20px;
+  backdrop-filter: blur(10px);
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), color var(--transition-fast);
+}
+
+.path__step:hover .path__dot {
+  transform: translateY(-6px) scale(1.08);
+  background: var(--gradient-main);
+  border-color: transparent;
+  color: var(--white);
+  box-shadow: var(--shadow-glow);
+}
+
+.path__step p {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-gray);
+  max-width: 110px;
+}
+
+.path__step--goal .path__dot {
+  background: var(--gradient-main);
+  color: var(--white);
+  box-shadow: var(--shadow-glow);
+}
+
+.path__step--goal p {
+  color: var(--white);
+  font-weight: 600;
+}
+
+/* ================= 9. SKILL SUMMARY TWEAK ================= */
+.skills-stats__grid {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+/* ================= 10. CALL TO ACTION ================= */
+.cta__card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 64px 40px;
+  text-align: center;
+  backdrop-filter: blur(16px);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta__card::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.18), transparent 65%);
+  filter: blur(40px);
+  z-index: -1;
+}
+
+.cta__title {
+  font-size: clamp(26px, 3.6vw, 38px);
+  margin-bottom: 14px;
+}
+
+.cta__desc {
+  font-size: 15px;
+  max-width: 520px;
+  margin: 0 auto 34px;
+}
+
+.cta__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* ================= 11. RESPONSIVE ================= */
+@media (max-width: 1100px) {
+  .stack__grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .skills-stats__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .category-card--wide {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 900px) {
+  .category__grid {
+    grid-template-columns: 1fr;
+  }
+  .category-card--wide {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 720px) {
+  .page-header {
+    min-height: 52vh;
+  }
+  .intro-card {
+    padding: 34px 26px;
+  }
+  .stack__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .skills-stats__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .path {
+    justify-content: flex-start;
+  }
+  .path::before {
+    display: none;
+  }
+  .path__step {
+    flex: 1 1 30%;
+  }
+  .cta__card {
+    padding: 44px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stack__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .path__step {
+    flex: 1 1 45%;
+  }
+}

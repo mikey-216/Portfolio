@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Technical Skills | Ansh Gupta — AI Engineer & Software Developer</title>
+  <meta name="description" content="Ansh Gupta's technical skills — programming languages, AI & Machine Learning, web development, databases, and developer tools." />
+  <meta name="keywords" content="Ansh Gupta, Skills, Python, Machine Learning, Web Development, AI, Java, C++, HTML CSS JavaScript" />
+  <meta name="author" content="Ansh Gupta" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Technical Skills | Ansh Gupta" />
+  <meta property="og:description" content="Technologies, programming languages, frameworks and tools I use to build intelligent applications." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630/050816/6366F1?text=Ansh+Gupta" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%236366F1%22>A</text></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Shared theme stylesheet (same design system as Home & Education) -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Skills page stylesheet -->
+  <link rel="stylesheet" href="skills.css" />
+</head>
+<body>
+
+  <!-- ===================== LOADING SCREEN ===================== -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__ring"></div>
+    <div class="loader__text">AG</div>
+  </div>
+
+  <!-- ===================== CUSTOM CURSOR ===================== -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" id="cursorFollower" aria-hidden="true"></div>
+
+  <!-- ===================== SCROLL PROGRESS BAR ===================== -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ===================== BACKGROUND LAYERS ===================== -->
+  <div class="bg-layer" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="bg-noise"></div>
+    <div class="blob blob--1"></div>
+    <div class="blob blob--2"></div>
+    <div class="blob blob--3"></div>
+    <canvas id="particles"></canvas>
+    <div class="mouse-glow" id="mouseGlow"></div>
+  </div>
+
+  <!-- ===================== NAVBAR (same as Home / Education) ===================== -->
+  <header class="navbar" id="navbar">
+    <nav class="navbar__inner" aria-label="Primary navigation">
+      <a href="index.html#home" class="navbar__logo" aria-label="Ansh Gupta home">
+        <span class="logo-box">AG</span>
+      </a>
+
+      <ul class="navbar__menu" id="navbarMenu">
+        <li><a href="index.html" class="nav-link" data-nav>Home</a></li>
+        <li><a href="about.html" class="nav-link" data-nav>About</a></li>
+        <li><a href="education.html" class="nav-link" data-nav>Education</a></li>
+        <li><a href="skill.html" class="nav-link active-link" data-nav>Skills</a></li>
+        <li><a href="#" class="nav-link" data-nav>Projects</a></li>
+        <li><a href="certifications.html" class="nav-link" data-nav>Certifications</a></li>
+        <li><a href="#" class="nav-link" data-nav>Coding Profiles</a></li>
+        <li><a href="contact.html" class="nav-link" data-nav>Contact</a></li>
+      </ul>
+
+      <div class="navbar__actions">
+        <a href="#" class="btn btn--sm btn--outline" download>
+          <i class="fa-solid fa-download"></i> Resume
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileSidebar">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===================== MOBILE SIDEBAR ===================== -->
+  <aside class="mobile-sidebar" id="mobileSidebar" aria-hidden="true">
+    <ul class="mobile-sidebar__menu">
+      <li><a href="index.html#home" data-nav-mobile>Home</a></li>
+      <li><a href="index.html#about" data-nav-mobile>About</a></li>
+      <li><a href="education.html" data-nav-mobile>Education</a></li>
+      <li><a href="skills.html" data-nav-mobile>Skills</a></li>
+      <li><a href="index.html#projects" data-nav-mobile>Projects</a></li>
+      <li><a href="index.html#certifications" data-nav-mobile>Certifications</a></li>
+      <li><a href="index.html#coding-profiles" data-nav-mobile>Coding Profiles</a></li>
+      <li><a href="index.html#contact" data-nav-mobile>Contact</a></li>
+    </ul>
+  </aside>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <main id="main-content">
+
+    <!-- ===================== PAGE HEADER ===================== -->
+    <header class="page-header">
+      <div class="page-header__shapes" aria-hidden="true">
+        <span class="shape shape--circle"></span>
+        <span class="shape shape--square"></span>
+        <span class="shape shape--triangle"></span>
+        <span class="shape shape--ring"></span>
+      </div>
+
+      <div class="container page-header__inner">
+        <p class="hero__eyebrow reveal" data-reveal><span class="dot"></span> Always Learning</p>
+        <h1 class="page-header__title reveal" data-reveal>
+          <span class="gradient-text">Technical Skills</span>
+        </h1>
+        <p class="page-header__subtitle reveal" data-reveal>
+          Technologies, Programming Languages, Frameworks &amp; Tools I Use
+        </p>
+      </div>
+
+      <a href="#skill-categories" class="scroll-indicator" aria-label="Scroll to skills">
+        <span></span>
+      </a>
+    </header>
+
+    <!-- ===================== INTRODUCTION ===================== -->
+    <section class="section" aria-label="Introduction">
+      <div class="container">
+        <div class="intro-card reveal" data-reveal>
+          <div class="intro-card__icon"><i class="fa-solid fa-quote-left"></i></div>
+          <p>
+            I enjoy learning modern technologies and continuously improving my programming, AI, machine learning, and
+            web development skills. I believe in building practical projects to strengthen my knowledge and solve
+            real-world problems.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SKILL CATEGORIES ===================== -->
+    <section class="section" id="skill-categories">
+      <div class="container">
+        <div class="section__head reveal" data-reveal>
+          <p class="section__eyebrow">Skill Set</p>
+          <h2 class="section__title">What I Work <span class="gradient-text">With</span></h2>
+        </div>
+
+        <div class="category__grid">
+
+          <!-- Category 1: Programming Languages -->
+          <div class="category-card reveal" data-reveal>
+            <div class="category-card__head">
+              <div class="category-card__icon"><i class="fa-solid fa-code"></i></div>
+              <div>
+                <h3 class="gradient-text">Programming Languages</h3>
+                <p>Core languages I build and problem-solve with.</p>
+              </div>
+            </div>
+
+            <ul class="skill-list">
+              <li class="skill-row">
+                <span class="skill-row__top"><span>Python</span><span class="skill-row__pct" data-target="90">0%</span></span>
+                <div class="skill-bar"><span style="--level:90%"></span></div>
+              </li>
+              <li class="skill-row">
+                <span class="skill-row__top"><span>Java</span><span class="skill-row__pct" data-target="80">0%</span></span>
+                <div class="skill-bar"><span style="--level:80%"></span></div>
+              </li>
+              <li class="skill-row">
+                <span class="skill-row__top"><span>C++</span><span class="skill-row__pct" data-target="75">0%</span></span>
+                <div class="skill-bar"><span style="--level:75%"></span></div>
+              </li>
+              <li class="skill-row">
+                <span class="skill-row__top"><span>C</span><span class="skill-row__pct" data-target="80">0%</span></span>
+                <div class="skill-bar"><span style="--level:80%"></span></div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Category 2: AI & ML -->
+          <div class="category-card reveal" data-reveal>
+            <div class="category-card__head">
+              <div class="category-card__icon"><i class="fa-solid fa-brain"></i></div>
+              <div>
+                <h3 class="gradient-text">Artificial Intelligence &amp; ML</h3>
+                <p>Exploring how machines learn and reason.</p>
+              </div>
+            </div>
+
+            <ul class="skill-list">
+              <li class="skill-row">
+                <span class="skill-row__top"><span>Machine Learning</span><span class="skill-row__pct" data-target="85">0%</span></span>
+                <div class="skill-bar"><span style="--level:85%"></span></div>
+              </li>
+              <li class="skill-row">
+                <span class="skill-row__top"><span>Deep Learning</span><span class="skill-row__pct" data-target="75">0%</span></span>
+                <div class="skill-bar"><span style="--level:75%"></span></div>
+              </li>
+              <li class="skill-row">
+                <span class="skill-row__top"><span>Natural Language Processing</span><span class="skill-row__pct" data-target="70">0%</span></span>
+                <div class="skill-bar"><span style="--level:70%"></span></div>
+              </li>
+              <li class="skill-row">
+                <span class="skill-row__top"><span>Computer Vision</span><span class="skill-row__pct" data-target="65">0%</span></span>
+                <div class="skill-bar"><span style="--level:65%"></span></div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Category 3: Web Development -->
+          <div class="category-card reveal" data-reveal>
+            <div class="category-card__head">
+              <div class="category-card__icon"><i class="fa-solid fa-laptop-code"></i></div>
+              <div>
+                <h3 class="gradient-text">Web Development</h3>
+                <p>Crafting responsive, modern interfaces.</p>
+              </div>
+            </div>
+
+            <ul class="skill-list">
+              <li class="skill-row">
+                <span class="skill-row__top"><span>HTML5</span><span class="skill-row__pct" data-target="95">0%</span></span>
+                <div class="skill-bar"><span style="--level:95%"></span></div>
+              </li>
+              <li class="skill-row">
+                <span class="skill-row__top"><span>CSS3</span><span class="skill-row__pct" data-target="90">0%</span></span>
+                <div class="skill-bar"><span style="--level:90%"></span></div>
+              </li>
+              <li class="skill-row">
+                <span class="skill-row__top"><span>JavaScript</span><span class="skill-row__pct" data-target="85">0%</span></span>
+                <div class="skill-bar"><span style="--level:85%"></span></div>
+              </li>
+              <li class="skill-row">
+                <span class="skill-row__top"><span>Responsive Design</span><span class="skill-row__pct" data-target="90">0%</span></span>
+                <div class="skill-bar"><span style="--level:90%"></span></div>
+              </li>
+              <li class="skill-row">
+                <span class="skill-row__top"><span>Modern UI Design</span><span class="skill-row__pct" data-target="85">0%</span></span>
+                <div class="skill-bar"><span style="--level:85%"></span></div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Category 4: Databases -->
+          <div class="category-card reveal" data-reveal>
+            <div class="category-card__head">
+              <div class="category-card__icon"><i class="fa-solid fa-database"></i></div>
+              <div>
+                <h3 class="gradient-text">Databases</h3>
+                <p>Storing and querying data reliably.</p>
+              </div>
+            </div>
+
+            <ul class="skill-list">
+              <li class="skill-row">
+                <span class="skill-row__top"><span>MySQL</span><span class="skill-row__pct" data-target="80">0%</span></span>
+                <div class="skill-bar"><span style="--level:80%"></span></div>
+              </li>
+              <li class="skill-row">
+                <span class="skill-row__top"><span>MongoDB</span><span class="skill-row__pct" data-target="70">0%</span></span>
+                <div class="skill-bar"><span style="--level:70%"></span></div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Category 5: Development Tools -->
+          <div class="category-card category-card--wide reveal" data-reveal>
+            <div class="category-card__head">
+              <div class="category-card__icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+              <div>
+                <h3 class="gradient-text">Development Tools</h3>
+                <p>The everyday toolkit that powers my workflow.</p>
+              </div>
+            </div>
+
+            <div class="tool-chips">
+              <span class="tool-chip"><i class="fa-brands fa-git-alt"></i> Git</span>
+              <span class="tool-chip"><i class="fa-brands fa-github"></i> GitHub</span>
+              <span class="tool-chip"><i class="fa-solid fa-code"></i> Visual Studio Code</span>
+              <span class="tool-chip"><i class="fa-solid fa-book"></i> Jupyter Notebook</span>
+              <span class="tool-chip"><i class="fa-brands fa-google"></i> Google Colab</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TECHNOLOGY STACK ===================== -->
+    <section class="section" aria-label="Technology stack">
+      <div class="container">
+        <div class="section__head reveal" data-reveal>
+          <p class="section__eyebrow">Tech Stack</p>
+          <h2 class="section__title">Tools of the <span class="gradient-text">Trade</span></h2>
+        </div>
+
+        <div class="stack__grid">
+          <div class="stack-icon reveal" data-reveal data-tooltip="Python"><i class="fa-brands fa-python"></i></div>
+          <div class="stack-icon reveal" data-reveal data-tooltip="Java"><i class="fa-brands fa-java"></i></div>
+          <div class="stack-icon reveal" data-reveal data-tooltip="C++"><i class="fa-solid fa-code"></i></div>
+          <div class="stack-icon reveal" data-reveal data-tooltip="C"><i class="fa-solid fa-c"></i></div>
+          <div class="stack-icon reveal" data-reveal data-tooltip="HTML5"><i class="fa-brands fa-html5"></i></div>
+          <div class="stack-icon reveal" data-reveal data-tooltip="CSS3"><i class="fa-brands fa-css3-alt"></i></div>
+          <div class="stack-icon reveal" data-reveal data-tooltip="JavaScript"><i class="fa-brands fa-js"></i></div>
+          <div class="stack-icon reveal" data-reveal data-tooltip="Git"><i class="fa-brands fa-git-alt"></i></div>
+          <div class="stack-icon reveal" data-reveal data-tooltip="GitHub"><i class="fa-brands fa-github"></i></div>
+          <div class="stack-icon reveal" data-reveal data-tooltip="VS Code"><i class="fa-solid fa-laptop-code"></i></div>
+          <div class="stack-icon reveal" data-reveal data-tooltip="Jupyter Notebook"><i class="fa-solid fa-book"></i></div>
+          <div class="stack-icon reveal" data-reveal data-tooltip="Google Colab"><i class="fa-brands fa-google"></i></div>
+          <div class="stack-icon reveal" data-reveal data-tooltip="MySQL"><i class="fa-solid fa-database"></i></div>
+          <div class="stack-icon reveal" data-reveal data-tooltip="MongoDB"><i class="fa-solid fa-leaf"></i></div>
+          <div class="stack-icon reveal" data-reveal data-tooltip="Machine Learning"><i class="fa-solid fa-robot"></i></div>
+          <div class="stack-icon reveal" data-reveal data-tooltip="Deep Learning"><i class="fa-solid fa-brain"></i></div>
+          <div class="stack-icon reveal" data-reveal data-tooltip="NLP"><i class="fa-solid fa-comments"></i></div>
+          <div class="stack-icon reveal" data-reveal data-tooltip="Computer Vision"><i class="fa-solid fa-eye"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== LEARNING PATH TIMELINE ===================== -->
+    <section class="section" aria-label="Learning journey">
+      <div class="container">
+        <div class="section__head reveal" data-reveal>
+          <p class="section__eyebrow">Growth Path</p>
+          <h2 class="section__title">My Learning <span class="gradient-text">Journey</span></h2>
+        </div>
+
+        <div class="path">
+          <div class="path__step reveal" data-reveal>
+            <div class="path__dot"><i class="fa-solid fa-seedling"></i></div>
+            <p>Beginner</p>
+          </div>
+          <div class="path__step reveal" data-reveal>
+            <div class="path__dot"><i class="fa-solid fa-code"></i></div>
+            <p>Programming Fundamentals</p>
+          </div>
+          <div class="path__step reveal" data-reveal>
+            <div class="path__dot"><i class="fa-solid fa-laptop-code"></i></div>
+            <p>Web Development</p>
+          </div>
+          <div class="path__step reveal" data-reveal>
+            <div class="path__dot"><i class="fa-solid fa-diagram-project"></i></div>
+            <p>Machine Learning</p>
+          </div>
+          <div class="path__step reveal" data-reveal>
+            <div class="path__dot"><i class="fa-solid fa-brain"></i></div>
+            <p>Artificial Intelligence</p>
+          </div>
+          <div class="path__step reveal" data-reveal>
+            <div class="path__dot"><i class="fa-solid fa-hammer"></i></div>
+            <p>Real-world Projects</p>
+          </div>
+          <div class="path__step path__step--goal reveal" data-reveal>
+            <div class="path__dot"><i class="fa-solid fa-rocket"></i></div>
+            <p>Future AI Engineer</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SKILL SUMMARY ===================== -->
+    <section class="stats" aria-label="Skill summary">
+      <div class="container">
+        <div class="stats__grid skills-stats__grid">
+          <div class="counter-card reveal" data-reveal>
+            <span class="counter" data-target="4">0</span><span class="counter-plus">+</span>
+            <p>Programming Languages</p>
+          </div>
+          <div class="counter-card reveal" data-reveal>
+            <span class="counter" data-target="4">0</span><span class="counter-plus">+</span>
+            <p>AI Technologies</p>
+          </div>
+          <div class="counter-card reveal" data-reveal>
+            <span class="counter" data-target="5">0</span><span class="counter-plus">+</span>
+            <p>Web Technologies</p>
+          </div>
+          <div class="counter-card reveal" data-reveal>
+            <span class="counter" data-target="5">0</span><span class="counter-plus">+</span>
+            <p>Development Tools</p>
+          </div>
+          <div class="counter-card reveal" data-reveal>
+            <span class="counter" data-target="2">0</span><span class="counter-plus">+</span>
+            <p>Databases</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CALL TO ACTION ===================== -->
+    <section class="section cta" aria-label="Let's collaborate">
+      <div class="container">
+        <div class="cta__card reveal" data-reveal>
+          <h2 class="cta__title">Let's Build Something <span class="gradient-text">Amazing Together</span></h2>
+          <p class="cta__desc">
+            I'm always excited to learn new technologies, collaborate on innovative projects, and contribute to
+            impactful software solutions.
+          </p>
+
+          <div class="cta__buttons">
+            <a href="index.html#projects" class="btn btn--glass magnetic" data-ripple>
+              <i class="fa-solid fa-diagram-project"></i> View Projects
+            </a>
+            <a href="Resume/Ansh_Gupta_Resume.pdf" class="btn btn--primary magnetic" data-ripple download>
+              <i class="fa-solid fa-download"></i> Download Resume
+            </a>
+            <a href="contact.html" class="btn btn--outline magnetic" data-ripple>
+              <i class="fa-solid fa-handshake"></i> Contact Me
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>Designed &amp; Developed by <span class="gradient-text">Ansh Gupta</span></p>
+      <p>&copy; 2026 All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ===================== BACK TO TOP ===================== -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Shared site behavior -->
+  <script src="script.js"></script>
+  <!-- Skills page behavior -->
+  <script src="skills.js"></script>
+</body>
+</html>
